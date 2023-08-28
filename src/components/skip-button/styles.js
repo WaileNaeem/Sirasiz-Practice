@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {COLORS} from '../../utils/colors';
+import {FONTS} from '../../utils/font-family';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
   text: {
     color: COLORS.black1,
     fontSize: 15,
-    fontFamily: 'Poppins-Medium',
+    fontFamily: FONTS.POPPINS_MEDIUM,
   },
 });
 

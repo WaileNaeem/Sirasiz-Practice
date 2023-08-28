@@ -3,16 +3,19 @@ import React from 'react';
 import styles from './styles';
 
 const AppButton = ({
-  color = '#ffffff',
-  title = 'Sample Text',
+  color,
+  title,
   onPress,
   style,
+  textColor,
+  ...otherProps
 }) => {
   return (
     <TouchableOpacity
       style={[styles.button, {backgroundColor: color}, style]}
-      onPress={onPress}>
-      <Text style={styles.text}>{title}</Text>
+      onPress={onPress}
+      {...otherProps}>
+      <Text style={[styles.text, {color: textColor}]}>{title}</Text>
     </TouchableOpacity>
   );
 };

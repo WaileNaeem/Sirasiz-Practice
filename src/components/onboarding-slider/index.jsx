@@ -5,44 +5,18 @@ import LinearGradient from 'react-native-linear-gradient';
 import AppButton from '../app-button';
 import SliderItem from '../onboarding-slider-item';
 import SlidesIndicator from '../indicator';
-import {IMAGES} from '../../utils/images-path';
 import {constants} from './constants';
 import {COLORS} from '../../utils/colors';
-
-const slides = [
-  {
-    id: 1,
-    title: 'SKIP TO QUEUE!',
-    description: 'Forget about wasting time in long queue with sirasiz.',
-    image: IMAGES.onboardingImage1,
-  },
-  {
-    id: 2,
-    title: 'ADVANCE SEARCH!',
-    description:
-      'Find the best business in your area providing the service you want!',
-    image: IMAGES.onboardingImage2,
-  },
-  {
-    id: 3,
-    title: 'TOP RECOMMENDATIONS',
-    description:
-      'Get the top business recommendations based on our advance rating system!',
-    image: IMAGES.onboardingImage3,
-  },
-  {
-    id: 4,
-    title: 'BOOK APPOINTMENT',
-    description: 'Select the time that suits you and book your appointment!',
-    image: IMAGES.onboardingImage4,
-  },
-];
+import {slides} from '../../utils/slides';
+import {useNavigation} from '@react-navigation/native';
+import Navigation from '../../navigation/navigation-constants';
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const {width} = useWindowDimensions();
   const slidesRef = useRef(null);
+  const navigation = useNavigation();
 
   const viewableItemChanged = useRef(({viewableItems}) => {
     setCurrentIndex(viewableItems[0].index);
@@ -57,7 +31,7 @@ const Slider = () => {
 
       setCurrentIndex(currentIndex + 1);
     } else {
-      navigation.reset({index: 0, routes: [{name: NAVIGATION.LoginScreen}]});
+      navigation.reset({index: 0, routes: [{name: Navigation.LOGIN}]});
     }
   };
 
@@ -90,6 +64,7 @@ const Slider = () => {
         title={constants.NEXT}
         color={COLORS.yellow}
         onPress={onNextPress}
+        textColor={COLORS.black2}
       />
     </LinearGradient>
   );

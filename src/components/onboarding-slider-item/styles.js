@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {COLORS} from '../../utils/colors';
+import {FONTS} from '../../utils/font-family';
 
 const styles = StyleSheet.create({
   container: {
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     fontWeight: 'bold',
-    fontFamily: 'Poppins-Bold',
+    fontFamily: FONTS.POPPINS_BOLD,
     lineHeight: 35,
     marginBottom: 10,
   },
@@ -25,10 +26,9 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     fontSize: 14,
     lineHeight: 18,
-    fontWeight: '400',
-    fontFamily: 'Poppins-Light',
+    fontFamily: FONTS.POPPINS_LIGHT,
     textAlign: 'center',
-    paddingHorizontal: 64,
+    paddingHorizontal: '4%',
   },
   skipButton: {
     padding: 10,
